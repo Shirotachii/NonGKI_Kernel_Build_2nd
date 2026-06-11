@@ -12,8 +12,8 @@ env:
   CUSTOM_CMDS : "CLANG_TRIPLE=aarch64-linux-gnu-"
   EXTRA_CMDS : "LD=ld.lld LLVM=1 LLVM_IAS=1"
 
-  KERNEL_SOURCE : "https://github.com/FlopKernel-Series/flop_trinket-mi_kernel"
-  KERNEL_BRANCH : "floppy-unity"
+  KERNEL_SOURCE : "https://github.com/Shirotachii/Kazuya-Reborn-Ginkgo"
+  KERNEL_BRANCH : "sixteen/main"
 
   CLANG_SOURCE : "https://gitlab.com/clangsantoni/zyc_clang.git"
   CLANG_BRANCH : "22"
@@ -25,21 +25,21 @@ env:
   GCC_32_BRANCH : "android12L-release"
 
   DEFCONFIG_SOURCE: ""
-  DEFCONFIG_NAME : "vendor/trinket-perf_defconfig"
+  DEFCONFIG_NAME : "vendor/ginkgo-perf_defconfig"
   DEFCONFIG_ORIGIN_IMAGE: ""
   DEFCONFIG_FROM_BOOT: false
 
   KERNELSU_SOURCE : ""
   KERNELSU_BRANCH : ""
 
-  KERNELSU_AUTO_GET : "false" # if u want easy setting kernelsu, u can true.
+  KERNELSU_AUTO_GET : "true" # if u want easy setting kernelsu, u can true.
   KERNELSU_AUTO_FORK : "next" # magic, rsuntk, next, resukisu and sukisu
 
-  SUSFS_ENABLE : false
+  SUSFS_ENABLE : true
   SUSFS_FIXED : false
 
-  AK3_SOURCE : "https://github.com/Flopster101/AnyKernel3"
-  AK3_BRANCH : "floppy-unity"
+  AK3_SOURCE : "https://github.com/chanprjkt/AnyKernel3"
+  AK3_BRANCH : "master"
 
   BOOT_SOURCE : ""
 
@@ -54,7 +54,7 @@ env:
   PACK_METHOD: "Anykernel3" # Anykernel3 need SOURCE and BRANCH, MKBOOTIMG needn't it.
   PACK_KMODULES: "false" # if u want pack kernel modules (.ko) into Anykernel3.
 
-  KERNELSU_METHOD: "shell" # shell, manual and only.
+  KERNELSU_METHOD: "manual" # shell, manual and only.
 
   PATCHES_SOURCE: "author/source" # [your_name]/[your_patch] -> gooder123/NonGKI_Patcher
   PATCHES_BRANCH: "branch" # [your_branch] -> main
@@ -64,7 +64,7 @@ env:
 
   REKERNEL_ENABLE: "false" # if u need Re:Kernel.
 
-  HOOK_METHOD: "syscall" # Manual hook method -> syscall.
+  HOOK_METHOD: "manual" # Manual hook method -> syscall.
 
   KERNEL_PATCH: "false" # If your kernel version is <= 4.9, you have the option of enabling the patch to patch the kernel_write and kernel_read functions.
 
@@ -76,7 +76,7 @@ env:
   BASEBAND_GUARD_ENABLE: "false" #if u want prevent unauthorized writes to critical partitions/device nodes.
   BASEBAND_GUARD_BOOT: "false" #if u want to protect boot partition.
 
-  HIDE_STUFF: "false" # hide some of the features
+  HIDE_STUFF: "true" # hide some of the features
 
   GENERATE_DTB: "true" # if u kernel need DTB , but cannot auto generate it. (Only Anykernel3).
   GENERATE_CHIP: "qcom" # only supported for qcom and mediatek.
@@ -84,7 +84,7 @@ env:
   BUILD_DEBUGGER: "false" # Output build errors.
   SKIP_PATCH: "false" # Ignore errors found in Patch Debugger.
 
-  BUILD_OTHER_CONFIG: "true" # Merge config files.
+  BUILD_OTHER_CONFIG: "false" # Merge config files.
   MERGE_CONFIG_FILES: "vendor/unified.config"
 
   FREE_MORE_SPACE: "false" # if u want get more space, enabled it.
